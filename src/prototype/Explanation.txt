@@ -1,0 +1,45 @@
+Here in this prototype module you can see an abstract class Item, 2 concrete classes Game and Book
+which extents this abstract class Item, an emun items for constants & Registry class which is the
+heart and soul of this pattern (You can name it anything, i am just following  standards)
+
+This is pretty simple example and easy to understand. Lets assume the company Amazon. Now suppose it
+has a lot of different types of items .... books, games blah blah.
+
+Now in order to display these items if we create it using the keyword "new" everytime, that will be
+very expensive say 10,000 items.
+
+So to avoid that we create one instance of each item ... save it in some kind of  registry in my
+example i am using Hashmap, and everytime an item is to be created i just clone that Item.
+
+Note my Item class is implementing the Cloneable interface .... so this Registry class gives you a
+method to create new unique items (as you can see in my PrototypeItemDemo class, println prints
+unique addresses) without using the keyword "new" thus saving a lot of resources.
+
+This is Prototype pattern, and is used to get unique instance of the same Object.
+
+Concepts :
+
+- Avoids costly creation
+- Avoids subclassing
+- Typically doesn't use "new" keyword
+- Often utilizes an interface
+- Usually implemented with a Registry
+
+Examples :
+- java.lang.Object #clone()
+
+Design :
+
+- Implements Clone/Cloneable
+- Avoids calling keyword "new"
+- Although a copy, each instance is unique
+- Costly construction not handled by client
+- Builder is opposite of the prototype pattern
+- Shallow Vs Deep copy (Shallow copy only copies immediate properties whereas deep copy will copy
+  any of its object references as well)
+
+
+Pitfalls :
+- Sometimes not clear when to use
+- Used with some other patterns ( usually implemented with some kind of registry )
+- Shallow vs Deep Copy
